@@ -1,0 +1,236 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:#f8f9fa;
+  color:#222;
+}
+
+nav{
+  background:#1a1a2e;
+  color:white;
+  padding:16px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+nav .logo{
+  font-size:24px;
+  font-weight:700;
+  color:#e94560;
+}
+
+nav ul{
+  list-style:none;
+  display:flex;
+  gap:24px;
+}
+
+nav ul a{
+  color:white;
+  text-decoration:none;
+  font-size:14px;
+}
+
+nav ul a:hover{
+  color:#e94560;
+}
+
+.hero{
+  background:linear-gradient(135deg,#1a1a2e,#16213e);
+  color:white;
+  text-align:center;
+  padding:100px 20px;
+}
+
+.hero h1{
+  font-size:52px;
+  font-weight:700;
+  margin-bottom:16px;
+}
+
+.hero h1 span{
+  color:#e94560;
+}
+
+.hero p{
+  font-size:18px;
+  color:#aaa;
+  margin-bottom:32px;
+}
+
+.hero a{
+  background:#e94560;
+  color:white;
+  padding:14px 36px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.hero a:hover{
+  background:#c73652;
+}
+
+.categories{
+  padding:60px 40px;
+  text-align:center;
+}
+
+.categories h2{
+  font-size:32px;
+  margin-bottom:40px;
+}
+
+.category-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:20px;
+  max-width:900px;
+  margin:auto;
+}
+
+.category-card{
+  background:white;
+  border-radius:12px;
+  padding:30px 20px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.08);
+  transition:0.3s;
+  cursor:pointer;
+}
+
+.category-card:hover{
+  transform:translateY(-6px);
+}
+
+.category-card .icon{
+  font-size:40px;
+  margin-bottom:12px;
+}
+
+.category-card h3{
+  font-size:16px;
+  font-weight:600;
+}
+
+.featured{
+  background:#1a1a2e;
+  padding:60px 40px;
+  text-align:center;
+}
+
+.featured h2{
+  color:white;
+  font-size:32px;
+  margin-bottom:40px;
+}
+
+.product-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:24px;
+  max-width:1000px;
+  margin:auto;
+}
+
+.product-card{
+  background:white;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 4px 15px rgba(0,0,0,0.2);
+  transition:0.3s;
+}
+
+.product-card:hover{
+  transform:translateY(-6px);
+}
+
+.product-img{
+  height:180px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:60px;
+  background:#f0f0f0;
+}
+
+.product-info{
+  padding:16px;
+  text-align:left;
+}
+
+.product-info h4{
+  font-size:15px;
+  margin-bottom:6px;
+}
+
+.price{
+  color:#e94560;
+  font-weight:700;
+  font-size:18px;
+}
+
+.old-price{
+  color:#aaa;
+  text-decoration:line-through;
+  font-size:13px;
+  margin-left:8px;
+}
+
+.btn-cart{
+  width:100%;
+  margin-top:12px;
+  padding:10px;
+  background:#e94560;
+  color:white;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  font-family:'Poppins',sans-serif;
+  font-weight:600;
+}
+
+.btn-cart:hover{
+  background:#c73652;
+}
+
+.banner{
+  background:#e94560;
+  color:white;
+  text-align:center;
+  padding:50px 20px;
+}
+
+.banner h2{
+  font-size:30px;
+  margin-bottom:12px;
+}
+
+.banner p{
+  font-size:16px;
+  margin-bottom:24px;
+  opacity:0.9;
+}
+
+.banner a{
+  background:white;
+  color:#e94560;
+  padding:12px 32px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:600;
+}
+
+footer{
+  background:#1a1a2e;
+  color:#aaa;
+  text-align:center;
+  padding:24px;
+  font-size:13px;
+}
