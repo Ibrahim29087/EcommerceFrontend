@@ -28,8 +28,9 @@ jobs:
           docker build -t ${{ secrets.DOCKER_USERNAME }}/frontend:staging-${{ github.sha }} ./src/frontend
           docker push ${{ secrets.DOCKER_USERNAME }}/frontend:staging-${{ github.sha }}
 
-      - name: Install Netlify CLI
-        run: npm install -g netlify-cli
-
-      - name: Deploy to Netlify Staging
-        run: netlify deploy --dir=src/frontend --site=${{ secrets.NETLIFY_SITE_ID }} --auth=${{ secrets.NETLIFY_AUTH_TOKEN }} --prod
+      - name: Deploy to Render Staging
+        run: |
+          curl -X POST \
+            "https://api.render.com/v1/services/${{ secrets.RENDER_SERVICE_ID_STAGING }}/deploys" \
+            -H "Authorization: Bearer ${{ secrets.RENDER_API_KEY }}" \
+            -H "Content-Type: application/json"
