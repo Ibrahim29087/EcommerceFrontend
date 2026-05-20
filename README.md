@@ -96,3 +96,10 @@ and Kubernetes orchestration. Implementing CI/CD pipelines taught us how
 enterprise-grade DevOps workflows operate. Key challenges included managing
 environment-specific secrets, configuring multi-branch deployments, and
 debugging Docker build failures in GitHub Actions.
+
+## Order Service Updates
+
+- Improved order tracking UI
+- Added support/help section
+- Enhanced recent order details
+- Added delivery information for users
