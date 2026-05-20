@@ -1,9 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: product-service
-  labels:
-    app: product-service
+  name: product-deployment
 spec:
   replicas: 2
   selector:
