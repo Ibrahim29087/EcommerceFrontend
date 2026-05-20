@@ -103,3 +103,9 @@ debugging Docker build failures in GitHub Actions.
 - Added support/help section
 - Enhanced recent order details
 - Added delivery information for users
+
+## Notification Service Updates
+
+- Improved notification UI layout
+- Added read/unread status indicators
+- Enhanced user notification experience
