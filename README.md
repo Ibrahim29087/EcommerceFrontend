@@ -9,7 +9,7 @@ CI/CD pipelines using GitHub Actions.
 |------|-------------|------|------|
 | Muhammad Ibrahim Raza | FA23-BCS-121 | Team Lead | Home Page , Account Page , Product Page |
 | Muhammad Ali Raza | FA23-BCS-101 | Team Member | Notification Page |
-| Muhammad Ibrahim Raza | FA23-BCS-121 | Team Member | Order Page  |
+| Muhammad Umar Nagra | FA23-BCS-137 | Team Member | Order Page  |
 
 
 ## Repository URLs
