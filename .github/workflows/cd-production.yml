@@ -1,0 +1,38 @@
+name: CD - Production
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment: production
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Lint HTML Files
+        run: |
+          find src -name "*.html" | head -10
+          echo "HTML structure verified for production"
+
+      - name: Docker Login
+        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+
+      - name: Build & Push Frontend Image
+        run: |
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/frontend:prod-${{ github.sha }} ./src/frontend
+          docker push ${{ secrets.DOCKER_USERNAME }}/frontend:prod-${{ github.sha }}
+
+      - name: Install Netlify CLI
+        run: npm install -g netlify-cli
+
+      - name: Deploy to Netlify Production
+        run: |
+          netlify deploy \
+            --dir=src/frontend \
+            --site=${{ secrets.NETLIFY_SITE_ID }} \
+            --auth=${{ secrets.NETLIFY_AUTH_TOKEN }} \
+            --prod

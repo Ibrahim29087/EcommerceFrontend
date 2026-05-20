@@ -1,0 +1,959 @@
+1. src/frontend/index.html — Home Page
+html<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopZone - Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; background: #f8f9fa; color: #222; }
+
+    nav {
+      background: #1a1a2e; color: white; padding: 16px 40px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    nav .logo { font-size: 24px; font-weight: 700; color: #e94560; }
+    nav ul { list-style: none; display: flex; gap: 24px; }
+    nav ul a { color: white; text-decoration: none; font-size: 14px; }
+    nav ul a:hover { color: #e94560; }
+
+    .hero {
+      background: linear-gradient(135deg, #1a1a2e, #16213e);
+      color: white; text-align: center; padding: 100px 20px;
+    }
+    .hero h1 { font-size: 52px; font-weight: 700; margin-bottom: 16px; }
+    .hero h1 span { color: #e94560; }
+    .hero p { font-size: 18px; color: #aaa; margin-bottom: 32px; }
+    .hero a {
+      background: #e94560; color: white; padding: 14px 36px;
+      border-radius: 30px; text-decoration: none; font-weight: 600;
+      transition: background 0.3s;
+    }
+    .hero a:hover { background: #c73652; }
+
+    .categories {
+      padding: 60px 40px; text-align: center;
+    }
+    .categories h2 { font-size: 32px; margin-bottom: 40px; }
+    .category-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px; max-width: 900px; margin: 0 auto;
+    }
+    .category-card {
+      background: white; border-radius: 12px; padding: 30px 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08); transition: transform 0.3s;
+      cursor: pointer;
+    }
+    .category-card:hover { transform: translateY(-6px); }
+    .category-card .icon { font-size: 40px; margin-bottom: 12px; }
+    .category-card h3 { font-size: 16px; font-weight: 600; }
+
+    .featured {
+      background: #1a1a2e; padding: 60px 40px; text-align: center;
+    }
+    .featured h2 { color: white; font-size: 32px; margin-bottom: 40px; }
+    .product-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px; max-width: 1000px; margin: 0 auto;
+    }
+    .product-card {
+      background: white; border-radius: 12px; overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: transform 0.3s;
+    }
+    .product-card:hover { transform: translateY(-6px); }
+    .product-img {
+      height: 180px; display: flex; align-items: center; justify-content: center;
+      font-size: 60px; background: #f0f0f0;
+    }
+    .product-info { padding: 16px; text-align: left; }
+    .product-info h4 { font-size: 15px; margin-bottom: 6px; }
+    .product-info .price { color: #e94560; font-weight: 700; font-size: 18px; }
+    .product-info .old-price { color: #aaa; text-decoration: line-through; font-size: 13px; margin-left: 8px; }
+    .btn-cart {
+      width: 100%; margin-top: 12px; padding: 10px;
+      background: #e94560; color: white; border: none;
+      border-radius: 8px; cursor: pointer; font-family: 'Poppins', sans-serif;
+      font-weight: 600; transition: background 0.3s;
+    }
+    .btn-cart:hover { background: #c73652; }
+
+    .banner {
+      background: #e94560; color: white; text-align: center; padding: 50px 20px;
+    }
+    .banner h2 { font-size: 30px; margin-bottom: 12px; }
+    .banner p { font-size: 16px; margin-bottom: 24px; opacity: 0.9; }
+    .banner a {
+      background: white; color: #e94560; padding: 12px 32px;
+      border-radius: 30px; text-decoration: none; font-weight: 600;
+    }
+
+    footer {
+      background: #1a1a2e; color: #aaa; text-align: center; padding: 24px;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">ShopZone</div>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="../product-service/index.html">Products</a></li>
+      <li><a href="../order-service/index.html">Orders</a></li>
+      <li><a href="../user-service/index.html">Account</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <h1>Shop <span>Smarter</span>, Live Better</h1>
+    <p>Discover thousands of products at unbeatable prices.</p>
+    <a href="../product-service/index.html">Shop Now</a>
+  </section>
+
+  <section class="categories">
+    <h2>Browse Categories</h2>
+    <div class="category-grid">
+      <div class="category-card"><div class="icon">📱</div><h3>Electronics</h3></div>
+      <div class="category-card"><div class="icon">👗</div><h3>Fashion</h3></div>
+      <div class="category-card"><div class="icon">🏠</div><h3>Home & Living</h3></div>
+      <div class="category-card"><div class="icon">💄</div><h3>Beauty</h3></div>
+      <div class="category-card"><div class="icon">📚</div><h3>Books</h3></div>
+    </div>
+  </section>
+
+  <section class="featured">
+    <h2>Featured Products</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <div class="product-img">📱</div>
+        <div class="product-info">
+          <h4>Wireless Earbuds Pro</h4>
+          <div><span class="price">$49.99</span><span class="old-price">$79.99</span></div>
+          <button class="btn-cart">Add to Cart</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">⌚</div>
+        <div class="product-info">
+          <h4>Smart Watch Series X</h4>
+          <div><span class="price">$129.99</span><span class="old-price">$199.99</span></div>
+          <button class="btn-cart">Add to Cart</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">💻</div>
+        <div class="product-info">
+          <h4>Laptop Stand Deluxe</h4>
+          <div><span class="price">$34.99</span><span class="old-price">$59.99</span></div>
+          <button class="btn-cart">Add to Cart</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">🎮</div>
+        <div class="product-info">
+          <h4>Gaming Controller</h4>
+          <div><span class="price">$59.99</span><span class="old-price">$89.99</span></div>
+          <button class="btn-cart">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="banner">
+    <h2>🔥 Summer Sale — Up to 50% Off!</h2>
+    <p>Limited time offer. Don't miss out on our biggest sale of the year.</p>
+    <a href="../product-service/index.html">Grab Deals</a>
+  </section>
+
+  <footer>
+    <p>© 2024 ShopZone. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
+
+2. src/product-service/index.html — Product Page
+html<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopZone - Products</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; background: #f8f9fa; color: #222; }
+
+    nav {
+      background: #1a1a2e; color: white; padding: 16px 40px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    nav .logo { font-size: 24px; font-weight: 700; color: #e94560; }
+    nav ul { list-style: none; display: flex; gap: 24px; }
+    nav ul a { color: white; text-decoration: none; font-size: 14px; }
+    nav ul a:hover { color: #e94560; }
+
+    .page-header {
+      background: linear-gradient(135deg, #1a1a2e, #16213e);
+      color: white; padding: 40px; text-align: center;
+    }
+    .page-header h1 { font-size: 36px; }
+    .page-header p { color: #aaa; margin-top: 8px; }
+
+    .filters {
+      background: white; padding: 16px 40px;
+      display: flex; gap: 12px; flex-wrap: wrap; align-items: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .filters span { font-weight: 600; margin-right: 8px; }
+    .filter-btn {
+      padding: 8px 18px; border: 2px solid #ddd; border-radius: 20px;
+      background: white; cursor: pointer; font-family: 'Poppins', sans-serif;
+      font-size: 13px; transition: all 0.3s;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: #e94560; color: white; border-color: #e94560;
+    }
+    .search-box {
+      margin-left: auto; padding: 8px 16px; border: 2px solid #ddd;
+      border-radius: 20px; font-family: 'Poppins', sans-serif; font-size: 13px;
+      outline: none; width: 220px;
+    }
+    .search-box:focus { border-color: #e94560; }
+
+    .products-section { padding: 40px; }
+    .products-section h2 { font-size: 22px; margin-bottom: 24px; }
+    .product-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 24px;
+    }
+    .product-card {
+      background: white; border-radius: 12px; overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08); transition: transform 0.3s;
+    }
+    .product-card:hover { transform: translateY(-6px); }
+    .badge {
+      position: absolute; top: 10px; left: 10px;
+      background: #e94560; color: white; font-size: 11px;
+      padding: 4px 10px; border-radius: 20px; font-weight: 600;
+    }
+    .product-img-wrap { position: relative; }
+    .product-img {
+      height: 180px; display: flex; align-items: center; justify-content: center;
+      font-size: 60px; background: #f0f0f0;
+    }
+    .product-info { padding: 16px; }
+    .product-info .category { font-size: 11px; color: #e94560; font-weight: 600; text-transform: uppercase; }
+    .product-info h4 { font-size: 15px; margin: 4px 0 8px; }
+    .stars { color: #f5a623; font-size: 13px; margin-bottom: 6px; }
+    .price { color: #e94560; font-weight: 700; font-size: 18px; }
+    .old-price { color: #aaa; text-decoration: line-through; font-size: 13px; margin-left: 8px; }
+    .btn-cart {
+      width: 100%; margin-top: 12px; padding: 10px;
+      background: #1a1a2e; color: white; border: none;
+      border-radius: 8px; cursor: pointer; font-family: 'Poppins', sans-serif;
+      font-weight: 600; transition: background 0.3s;
+    }
+    .btn-cart:hover { background: #e94560; }
+
+    footer {
+      background: #1a1a2e; color: #aaa; text-align: center;
+      padding: 24px; font-size: 13px; margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">ShopZone</div>
+    <ul>
+      <li><a href="../frontend/index.html">Home</a></li>
+      <li><a href="#">Products</a></li>
+      <li><a href="../order-service/index.html">Orders</a></li>
+      <li><a href="../user-service/index.html">Account</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-header">
+    <h1>All Products</h1>
+    <p>Find exactly what you're looking for</p>
+  </div>
+
+  <div class="filters">
+    <span>Filter:</span>
+    <button class="filter-btn active">All</button>
+    <button class="filter-btn">Electronics</button>
+    <button class="filter-btn">Fashion</button>
+    <button class="filter-btn">Home</button>
+    <button class="filter-btn">Beauty</button>
+    <input class="search-box" type="text" placeholder="🔍 Search products...">
+  </div>
+
+  <section class="products-section">
+    <h2>Showing 8 Products</h2>
+    <div class="product-grid">
+
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <div class="product-img">📱</div>
+          <span class="badge">-38%</span>
+        </div>
+        <div class="product-info">
+          <div class="category">Electronics</div>
+          <h4>Wireless Earbuds Pro</h4>
+          <div class="stars">★★★★★</div>
+          <span class="price">$49.99</span><span class="old-price">$79.99</span>
+          <button class="btn-cart">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <div class="product-img">⌚</div>
+          <span class="badge">-35%</span>
+        </div>
+        <div class="product-info">
+          <div class="category">Electronics</div>
+          <h4>Smart Watch Series X</h4>
+          <div class="stars">★★★★☆</div>
+          <span class="price">$129.99</span><span class="old-price">$199.99</span>
+          <button class="btn-cart">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <div class="product-img">👟</div>
+        </div>
+        <div class="product-info">
+          <div class="category">Fashion</div>
+          <h4>Running Shoes Elite</h4>
+          <div class="stars">★★★★★</div>
+          <span class="price">$89.99</span><span class="old-price">$120.00</span>
+          <button class="btn-cart">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <div class="product-img">🎮</div>
+          <span class="badge">Sale</span>
+        </div>
+        <div class="product-info">
+          <div class="category">Electronics</div>
+          <h4>Gaming Controller</h4>
+          <div class="stars">★★★★☆</div>
+          <span class="price">$59.99</span><span class="old-price">$89.99</span>
+          <button class="btn-cart">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <div class="product-img">🛋️</div>
+        </div>
+        <div class="product-info">
+          <div class="category">Home</div>
+          <h4>Comfort Cushion Set</h4>
+          <div class="stars">★★★★★</div>
+          <span class="price">$29.99</span><span class="old-price">$45.00</span>
+          <button class="btn-cart">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <div class="product-img">💄</div>
+        </div>
+        <div class="product-info">
+          <div class="category">Beauty</div>
+          <h4>Glow Serum Kit</h4>
+          <div class="stars">★★★★☆</div>
+          <span class="price">$39.99</span><span class="old-price">$60.00</span>
+          <button class="btn-cart">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <div class="product-img">💻</div>
+          <span class="badge">-42%</span>
+        </div>
+        <div class="product-info">
+          <div class="category">Electronics</div>
+          <h4>Laptop Stand Deluxe</h4>
+          <div class="stars">★★★★★</div>
+          <span class="price">$34.99</span><span class="old-price">$59.99</span>
+          <button class="btn-cart">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <div class="product-img">📚</div>
+        </div>
+        <div class="product-info">
+          <div class="category">Books</div>
+          <h4>Dev Mastery Bundle</h4>
+          <div class="stars">★★★★★</div>
+          <span class="price">$24.99</span><span class="old-price">$40.00</span>
+          <button class="btn-cart">Add to Cart</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer><p>© 2024 ShopZone. All rights reserved.</p></footer>
+
+  <script>
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
+
+3. src/order-service/index.html — Order Page
+html<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopZone - Orders</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; background: #f8f9fa; color: #222; }
+
+    nav {
+      background: #1a1a2e; color: white; padding: 16px 40px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    nav .logo { font-size: 24px; font-weight: 700; color: #e94560; }
+    nav ul { list-style: none; display: flex; gap: 24px; }
+    nav ul a { color: white; text-decoration: none; font-size: 14px; }
+    nav ul a:hover { color: #e94560; }
+
+    .page-header {
+      background: linear-gradient(135deg, #1a1a2e, #16213e);
+      color: white; padding: 40px; text-align: center;
+    }
+    .page-header h1 { font-size: 36px; }
+    .page-header p { color: #aaa; margin-top: 8px; }
+
+    .orders-container { max-width: 860px; margin: 40px auto; padding: 0 20px; }
+
+    .summary-cards {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px; margin-bottom: 32px;
+    }
+    .summary-card {
+      background: white; border-radius: 12px; padding: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08); text-align: center;
+      border-top: 4px solid #e94560;
+    }
+    .summary-card .number { font-size: 32px; font-weight: 700; color: #e94560; }
+    .summary-card .label { font-size: 13px; color: #888; margin-top: 4px; }
+
+    .orders-list h2 { font-size: 22px; margin-bottom: 20px; }
+    .order-card {
+      background: white; border-radius: 12px; padding: 20px 24px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08); margin-bottom: 16px;
+      display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+    }
+    .order-icon { font-size: 36px; }
+    .order-details { flex: 1; }
+    .order-details h4 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+    .order-details p { font-size: 13px; color: #888; }
+    .order-id { font-size: 12px; color: #aaa; margin-top: 2px; }
+    .order-meta { text-align: right; }
+    .order-price { font-size: 18px; font-weight: 700; color: #1a1a2e; }
+    .status {
+      display: inline-block; padding: 4px 14px; border-radius: 20px;
+      font-size: 12px; font-weight: 600; margin-top: 6px;
+    }
+    .status.delivered { background: #e8f5e9; color: #2e7d32; }
+    .status.shipped { background: #e3f2fd; color: #1565c0; }
+    .status.processing { background: #fff8e1; color: #f57f17; }
+    .status.cancelled { background: #fce4ec; color: #c62828; }
+    .btn-track {
+      padding: 8px 18px; background: #e94560; color: white;
+      border: none; border-radius: 8px; cursor: pointer;
+      font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 600;
+      margin-top: 8px; transition: background 0.3s;
+    }
+    .btn-track:hover { background: #c73652; }
+
+    .tracker {
+      background: white; border-radius: 12px; padding: 24px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08); margin-top: 32px;
+    }
+    .tracker h3 { font-size: 18px; margin-bottom: 24px; }
+    .track-steps {
+      display: flex; justify-content: space-between; position: relative;
+    }
+    .track-steps::before {
+      content: ''; position: absolute; top: 16px; left: 0; right: 0;
+      height: 3px; background: #eee; z-index: 0;
+    }
+    .track-step { text-align: center; flex: 1; position: relative; z-index: 1; }
+    .step-dot {
+      width: 32px; height: 32px; border-radius: 50%; background: #eee;
+      margin: 0 auto 8px; display: flex; align-items: center; justify-content: center;
+      font-size: 16px;
+    }
+    .step-dot.done { background: #e94560; }
+    .step-dot.active { background: #1a1a2e; }
+    .track-step p { font-size: 12px; color: #888; }
+    .track-step.done p { color: #e94560; font-weight: 600; }
+
+    footer {
+      background: #1a1a2e; color: #aaa; text-align: center;
+      padding: 24px; font-size: 13px; margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">ShopZone</div>
+    <ul>
+      <li><a href="../frontend/index.html">Home</a></li>
+      <li><a href="../product-service/index.html">Products</a></li>
+      <li><a href="#">Orders</a></li>
+      <li><a href="../user-service/index.html">Account</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-header">
+    <h1>My Orders</h1>
+    <p>Track and manage your purchases</p>
+  </div>
+
+  <div class="orders-container">
+
+    <div class="summary-cards">
+      <div class="summary-card"><div class="number">12</div><div class="label">Total Orders</div></div>
+      <div class="summary-card"><div class="number">3</div><div class="label">In Progress</div></div>
+      <div class="summary-card"><div class="number">8</div><div class="label">Delivered</div></div>
+      <div class="summary-card"><div class="number">1</div><div class="label">Cancelled</div></div>
+    </div>
+
+    <div class="orders-list">
+      <h2>Recent Orders</h2>
+
+      <div class="order-card">
+        <div class="order-icon">📱</div>
+        <div class="order-details">
+          <h4>Wireless Earbuds Pro</h4>
+          <p>Ordered on May 18, 2024</p>
+          <div class="order-id">#ORD-2024-00142</div>
+        </div>
+        <div class="order-meta">
+          <div class="order-price">$49.99</div>
+          <div><span class="status shipped">Shipped</span></div>
+          <button class="btn-track">Track</button>
+        </div>
+      </div>
+
+      <div class="order-card">
+        <div class="order-icon">⌚</div>
+        <div class="order-details">
+          <h4>Smart Watch Series X</h4>
+          <p>Ordered on May 15, 2024</p>
+          <div class="order-id">#ORD-2024-00138</div>
+        </div>
+        <div class="order-meta">
+          <div class="order-price">$129.99</div>
+          <div><span class="status delivered">Delivered</span></div>
+          <button class="btn-track">View</button>
+        </div>
+      </div>
+
+      <div class="order-card">
+        <div class="order-icon">🎮</div>
+        <div class="order-details">
+          <h4>Gaming Controller</h4>
+          <p>Ordered on May 10, 2024</p>
+          <div class="order-id">#ORD-2024-00131</div>
+        </div>
+        <div class="order-meta">
+          <div class="order-price">$59.99</div>
+          <div><span class="status processing">Processing</span></div>
+          <button class="btn-track">Track</button>
+        </div>
+      </div>
+
+      <div class="order-card">
+        <div class="order-icon">👟</div>
+        <div class="order-details">
+          <h4>Running Shoes Elite</h4>
+          <p>Ordered on May 5, 2024</p>
+          <div class="order-id">#ORD-2024-00122</div>
+        </div>
+        <div class="order-meta">
+          <div class="order-price">$89.99</div>
+          <div><span class="status cancelled">Cancelled</span></div>
+          <button class="btn-track">Reorder</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="tracker">
+      <h3>📦 Tracking Order #ORD-2024-00142</h3>
+      <div class="track-steps">
+        <div class="track-step done">
+          <div class="step-dot done">✓</div>
+          <p>Ordered</p>
+        </div>
+        <div class="track-step done">
+          <div class="step-dot done">✓</div>
+          <p>Confirmed</p>
+        </div>
+        <div class="track-step done">
+          <div class="step-dot active">🚚</div>
+          <p>Shipped</p>
+        </div>
+        <div class="track-step">
+          <div class="step-dot">📦</div>
+          <p>Out for Delivery</p>
+        </div>
+        <div class="track-step">
+          <div class="step-dot">🏠</div>
+          <p>Delivered</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer><p>© 2024 ShopZone. All rights reserved.</p></footer>
+</body>
+</html>
+
+4. src/user-service/index.html — User Account Page
+html<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopZone - My Account</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; background: #f8f9fa; color: #222; }
+
+    nav {
+      background: #1a1a2e; color: white; padding: 16px 40px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    nav .logo { font-size: 24px; font-weight: 700; color: #e94560; }
+    nav ul { list-style: none; display: flex; gap: 24px; }
+    nav ul a { color: white; text-decoration: none; font-size: 14px; }
+    nav ul a:hover { color: #e94560; }
+
+    .profile-header {
+      background: linear-gradient(135deg, #1a1a2e, #16213e);
+      padding: 40px; display: flex; align-items: center; gap: 24px;
+    }
+    .avatar {
+      width: 80px; height: 80px; border-radius: 50%; background: #e94560;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 36px; color: white; font-weight: 700;
+    }
+    .profile-info h1 { color: white; font-size: 26px; }
+    .profile-info p { color: #aaa; font-size: 14px; margin-top: 4px; }
+    .profile-info .member { color: #e94560; font-size: 12px; font-weight: 600; margin-top: 6px; }
+
+    .container { max-width: 860px; margin: 40px auto; padding: 0 20px; }
+
+    .stats {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px; margin-bottom: 32px;
+    }
+    .stat-card {
+      background: white; border-radius: 12px; padding: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08); text-align: center;
+      border-top: 4px solid #e94560;
+    }
+    .stat-card .num { font-size: 28px; font-weight: 700; color: #e94560; }
+    .stat-card .lbl { font-size: 12px; color: #888; margin-top: 4px; }
+
+    .section { background: white; border-radius: 12px; padding: 24px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
+    .section h3 { font-size: 18px; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 2px solid #f0f0f0; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-group label { font-size: 13px; font-weight: 600; color: #555; }
+    .form-group input {
+      padding: 10px 14px; border: 2px solid #eee; border-radius: 8px;
+      font-family: 'Poppins', sans-serif; font-size: 14px; outline: none;
+    }
+    .form-group input:focus { border-color: #e94560; }
+    .btn-save {
+      padding: 10px 28px; background: #e94560; color: white;
+      border: none; border-radius: 8px; cursor: pointer;
+      font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 14px;
+      transition: background 0.3s;
+    }
+    .btn-save:hover { background: #c73652; }
+
+    .address-card {
+      border: 2px solid #eee; border-radius: 10px; padding: 16px;
+      margin-bottom: 12px; position: relative;
+    }
+    .address-card.default { border-color: #e94560; }
+    .address-card .default-badge {
+      position: absolute; top: 12px; right: 12px;
+      background: #e94560; color: white; font-size: 11px;
+      padding: 3px 10px; border-radius: 20px;
+    }
+    .address-card p { font-size: 14px; color: #555; line-height: 1.6; }
+
+    footer {
+      background: #1a1a2e; color: #aaa; text-align: center;
+      padding: 24px; font-size: 13px; margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">ShopZone</div>
+    <ul>
+      <li><a href="../frontend/index.html">Home</a></li>
+      <li><a href="../product-service/index.html">Products</a></li>
+      <li><a href="../order-service/index.html">Orders</a></li>
+      <li><a href="#">Account</a></li>
+    </ul>
+  </nav>
+
+  <div class="profile-header">
+    <div class="avatar">M</div>
+    <div class="profile-info">
+      <h1>Muhammad Ibrahim</h1>
+      <p>ibrahim@shopzone.com</p>
+      <div class="member">⭐ Premium Member since 2023</div>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div class="stats">
+      <div class="stat-card"><div class="num">12</div><div class="lbl">Orders</div></div>
+      <div class="stat-card"><div class="num">4</div><div class="lbl">Wishlist</div></div>
+      <div class="stat-card"><div class="num">$842</div><div class="lbl">Total Spent</div></div>
+      <div class="stat-card"><div class="num">320</div><div class="lbl">Points</div></div>
+    </div>
+
+    <div class="section">
+      <h3>👤 Personal Information</h3>
+      <div class="form-row">
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text" value="Muhammad Ibrahim">
+        </div>
+        <div class="form-group">
+          <label>Last Name</label>
+          <input type="text" value="Raza">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" value="ibrahim@shopzone.com">
+        </div>
+        <div class="form-group">
+          <label>Phone</label>
+          <input type="text" value="+92 300 1234567">
+        </div>
+      </div>
+      <button class="btn-save">Save Changes</button>
+    </div>
+
+    <div class="section">
+      <h3>📍 Saved Addresses</h3>
+      <div class="address-card default">
+        <span class="default-badge">Default</span>
+        <p><strong>Home</strong></p>
+        <p>123 Garden Town, Lahore, Punjab 54000, Pakistan</p>
+      </div>
+      <div class="address-card">
+        <p><strong>Office</strong></p>
+        <p>456 DHA Phase 5, Lahore, Punjab 54600, Pakistan</p>
+      </div>
+    </div>
+
+  </div>
+
+  <footer><p>© 2024 ShopZone. All rights reserved.</p></footer>
+</body>
+</html>
+
+5. src/notification-service/index.html — Notifications Page
+html<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopZone - Notifications</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; background: #f8f9fa; color: #222; }
+
+    nav {
+      background: #1a1a2e; color: white; padding: 16px 40px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    nav .logo { font-size: 24px; font-weight: 700; color: #e94560; }
+    nav ul { list-style: none; display: flex; gap: 24px; }
+    nav ul a { color: white; text-decoration: none; font-size: 14px; }
+    nav ul a:hover { color: #e94560; }
+
+    .page-header {
+      background: linear-gradient(135deg, #1a1a2e, #16213e);
+      color: white; padding: 40px; text-align: center;
+    }
+    .page-header h1 { font-size: 36px; }
+    .page-header p { color: #aaa; margin-top: 8px; }
+
+    .container { max-width: 720px; margin: 40px auto; padding: 0 20px; }
+
+    .toolbar {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 20px;
+    }
+    .toolbar h2 { font-size: 20px; }
+    .btn-clear {
+      padding: 8px 18px; background: transparent; color: #e94560;
+      border: 2px solid #e94560; border-radius: 8px; cursor: pointer;
+      font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 600;
+      transition: all 0.3s;
+    }
+    .btn-clear:hover { background: #e94560; color: white; }
+
+    .notif-card {
+      background: white; border-radius: 12px; padding: 18px 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08); margin-bottom: 12px;
+      display: flex; gap: 16px; align-items: flex-start;
+      border-left: 4px solid transparent; transition: transform 0.2s;
+    }
+    .notif-card:hover { transform: translateX(4px); }
+    .notif-card.unread { border-left-color: #e94560; background: #fff8f9; }
+    .notif-card.order { border-left-color: #1565c0; }
+    .notif-card.promo { border-left-color: #f57f17; }
+    .notif-icon { font-size: 28px; flex-shrink: 0; }
+    .notif-body { flex: 1; }
+    .notif-body h4 { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+    .notif-body p { font-size: 13px; color: #666; line-height: 1.5; }
+    .notif-time { font-size: 11px; color: #aaa; margin-top: 6px; }
+    .unread-dot {
+      width: 10px; height: 10px; border-radius: 50%;
+      background: #e94560; flex-shrink: 0; margin-top: 6px;
+    }
+
+    .empty-state {
+      text-align: center; padding: 60px 20px; color: #aaa;
+    }
+    .empty-state .icon { font-size: 60px; margin-bottom: 16px; }
+    .empty-state p { font-size: 16px; }
+
+    footer {
+      background: #1a1a2e; color: #aaa; text-align: center;
+      padding: 24px; font-size: 13px; margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">ShopZone</div>
+    <ul>
+      <li><a href="../frontend/index.html">Home</a></li>
+      <li><a href="../product-service/index.html">Products</a></li>
+      <li><a href="../order-service/index.html">Orders</a></li>
+      <li><a href="../user-service/index.html">Account</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-header">
+    <h1>🔔 Notifications</h1>
+    <p>Stay updated with your orders and deals</p>
+  </div>
+
+  <div class="container">
+    <div class="toolbar">
+      <h2>Recent (5 unread)</h2>
+      <button class="btn-clear">Mark All Read</button>
+    </div>
+
+    <div class="notif-card unread">
+      <div class="notif-icon">🚚</div>
+      <div class="notif-body">
+        <h4>Your order has been shipped!</h4>
+        <p>Order #ORD-2024-00142 (Wireless Earbuds Pro) is on its way. Expected delivery: May 22, 2024.</p>
+        <div class="notif-time">2 hours ago</div>
+      </div>
+      <div class="unread-dot"></div>
+    </div>
+
+    <div class="notif-card unread promo">
+      <div class="notif-icon">🔥</div>
+      <div class="notif-body">
+        <h4>Flash Sale — 50% Off Electronics!</h4>
+        <p>Hurry! Our biggest electronics sale ends in 6 hours. Grab your favorites before they're gone.</p>
+        <div class="notif-time">5 hours ago</div>
+      </div>
+      <div class="unread-dot"></div>
+    </div>
+
+    <div class="notif-card unread order">
+      <div class="notif-icon">✅</div>
+      <div class="notif-body">
+        <h4>Order Confirmed</h4>
+        <p>Your order #ORD-2024-00142 has been confirmed and is being prepared for shipment.</p>
+        <div class="notif-time">Yesterday at 3:20 PM</div>
+      </div>
+      <div class="unread-dot"></div>
+    </div>
+
+    <div class="notif-card">
+      <div class="notif-icon">⭐</div>
+      <div class="notif-body">
+        <h4>How was your Smart Watch?</h4>
+        <p>You recently received Smart Watch Series X. Share your experience and earn 50 reward points!</p>
+        <div class="notif-time">May 16, 2024</div>
+      </div>
+    </div>
+
+    <div class="notif-card">
+      <div class="notif-icon">🎁</div>
+      <div class="notif-body">
+        <h4>320 Reward Points Earned!</h4>
+        <p>You've accumulated 320 points. Redeem them for discounts on your next purchase.</p>
+        <div class="notif-time">May 15, 2024</div>
+      </div>
+    </div>
+
+    <div class="notif-card">
+      <div class="notif-icon">📦</div>
+      <div class="notif-body">
+        <h4>Order Delivered Successfully</h4>
+        <p>Your Smart Watch Series X has been delivered. Enjoy your purchase!</p>
+        <div class="notif-time">May 15, 2024</div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer><p>© 2024 ShopZone. All rights reserved.</p></footer>
+</body>
+</html>
