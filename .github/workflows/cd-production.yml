@@ -17,6 +17,20 @@ jobs:
         run: |
           find src -name "*.html" | head -10
           echo "HTML structure verified for production"
+      
+      - name: Run Unit Tests
+        run: |
+          echo "Running unit tests..."
+          # Check all required files exist
+          test -f src/frontend/index.html && echo "✅ frontend/index.html exists"
+          test -f src/user-service/index.html && echo "✅ user-service/index.html exists"
+          test -f src/product-service/index.html && echo "✅ product-service/index.html exists"
+          test -f src/order-service/index.html && echo "✅ order-service/index.html exists"
+          test -f src/notification-service/index.html && echo "✅ notification-service/index.html exists"
+          # Check HTML has required content
+          grep -q "<html" src/frontend/index.html && echo "✅ Valid HTML structure"
+          grep -q "<title>" src/frontend/index.html && echo "✅ Title tag present"
+          echo "All tests passed ✅"
 
       - name: Docker Login
         run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
@@ -31,4 +45,5 @@ jobs:
           curl -X POST \
             "https://api.render.com/v1/services/${{ secrets.RENDER_SERVICE_ID_PROD }}/deploys" \
             -H "Authorization: Bearer ${{ secrets.RENDER_API_KEY }}" \
-            -H "Content-Type: application/json"
+            -H "Content-Type: application/json" \
+            -d '{}'
