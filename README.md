@@ -19,9 +19,9 @@ CI/CD pipelines using GitHub Actions.
 ## Live Environments
 | Environment | URL |
 |---|---|
-| Production | https://ecommerce-production.onrender.com |
-| Staging | https://ecommerce-staging.onrender.com |
-| Development | https://ecommerce-development.onrender.com |
+| Production | [https://ecommerce-production.onrender.com](https://ecommerce-production-4l7l.onrender.com) |
+| Staging | [https://ecommerce-staging.onrender.com](https://ecommerce-staging-f1so.onrender.com) |
+| Development | [https://ecommerce-development.onrender.com](https://ecommerce-development-htgb.onrender.com) |
 
 ## Folder Structure
 project/
