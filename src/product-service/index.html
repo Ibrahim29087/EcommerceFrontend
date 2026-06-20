@@ -1,19 +1,17 @@
+<!-- src/product-service/index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ShopZone - Products</title>
-
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
   <nav>
     <div class="logo">ShopZone</div>
-
     <ul>
       <li><a href="../frontend/index.html">Home</a></li>
       <li><a href="#">Products</a></li>
@@ -29,19 +27,16 @@
 
   <div class="filters">
     <span>Filter:</span>
-
     <button class="filter-btn active">All</button>
     <button class="filter-btn">Electronics</button>
     <button class="filter-btn">Fashion</button>
     <button class="filter-btn">Home</button>
     <button class="filter-btn">Beauty</button>
-
     <input class="search-box" type="text" placeholder="🔍 Search products...">
   </div>
 
   <section class="products-section">
     <h2>Showing 8 Products</h2>
-
     <div class="product-grid">
 
       <div class="product-card">
@@ -49,15 +44,113 @@
           <div class="product-img">📱</div>
           <span class="badge">-38%</span>
         </div>
-
         <div class="product-info">
           <div class="category">Electronics</div>
           <h4>Wireless Earbuds Pro</h4>
           <div class="stars">★★★★★</div>
-
           <span class="price">$49.99</span>
           <span class="old-price">$79.99</span>
+          <button class="btn-cart">Add to Cart</button>
+        </div>
+      </div>
 
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <div class="product-img">⌚</div>
+          <span class="badge">-35%</span>
+        </div>
+        <div class="product-info">
+          <div class="category">Electronics</div>
+          <h4>Smart Watch Series X</h4>
+          <div class="stars">★★★★☆</div>
+          <span class="price">$129.99</span>
+          <span class="old-price">$199.99</span>
+          <button class="btn-cart">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <div class="product-img">👟</div>
+        </div>
+        <div class="product-info">
+          <div class="category">Fashion</div>
+          <h4>Running Shoes Elite</h4>
+          <div class="stars">★★★★★</div>
+          <span class="price">$89.99</span>
+          <span class="old-price">$120.00</span>
+          <button class="btn-cart">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <div class="product-img">🎮</div>
+          <span class="badge">Sale</span>
+        </div>
+        <div class="product-info">
+          <div class="category">Electronics</div>
+          <h4>Gaming Controller</h4>
+          <div class="stars">★★★★☆</div>
+          <span class="price">$59.99</span>
+          <span class="old-price">$89.99</span>
+          <button class="btn-cart">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <div class="product-img">🛋️</div>
+        </div>
+        <div class="product-info">
+          <div class="category">Home</div>
+          <h4>Comfort Cushion Set</h4>
+          <div class="stars">★★★★★</div>
+          <span class="price">$29.99</span>
+          <span class="old-price">$45.00</span>
+          <button class="btn-cart">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <div class="product-img">💄</div>
+        </div>
+        <div class="product-info">
+          <div class="category">Beauty</div>
+          <h4>Glow Serum Kit</h4>
+          <div class="stars">★★★★☆</div>
+          <span class="price">$39.99</span>
+          <span class="old-price">$60.00</span>
+          <button class="btn-cart">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <div class="product-img">💻</div>
+          <span class="badge">-42%</span>
+        </div>
+        <div class="product-info">
+          <div class="category">Electronics</div>
+          <h4>Laptop Stand Deluxe</h4>
+          <div class="stars">★★★★★</div>
+          <span class="price">$34.99</span>
+          <span class="old-price">$59.99</span>
+          <button class="btn-cart">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <div class="product-img">📚</div>
+        </div>
+        <div class="product-info">
+          <div class="category">Books</div>
+          <h4>Dev Mastery Bundle</h4>
+          <div class="stars">★★★★★</div>
+          <span class="price">$24.99</span>
+          <span class="old-price">$40.00</span>
           <button class="btn-cart">Add to Cart</button>
         </div>
       </div>
@@ -70,6 +163,5 @@
   </footer>
 
   <script src="script.js"></script>
-
 </body>
 </html>
