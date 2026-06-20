@@ -1,4 +1,5 @@
 # Devops_Final
+
 ## Project Overview
 A cloud-native e-commerce platform built with microservices architecture,
 containerized with Docker, orchestrated with Kubernetes, and deployed via
@@ -7,10 +8,9 @@ CI/CD pipelines using GitHub Actions.
 ## Team
 | Name | Roll Number | Role | Page |
 |------|-------------|------|------|
-| Muhammad Ibrahim Raza | FA23-BCS-121 | Team Lead | Home Page , Account Page , Product Page |
-| Muhammad Ali Raza | FA23-BCS-101 | Team Member | Notification Page |
-| Muhammad Umar Nagra | FA23-BCS-137 | Team Member | Order Page  |
-
+| Muhammad Ibrahim Raza | FA23-BCS-121 | Team Lead | Home Page,Product Page |
+| Muhammad Ali Raza | FA23-BCS-101 | Team Member | Orders Page |
+| Muhammad Umar Nagra | FA23-BCS-137 | Team Member | Account Page |
 
 ## Repository URLs
 - **GitHub Repo:** https://github.com/Ibrahim29087/Devops_Final
@@ -19,35 +19,11 @@ CI/CD pipelines using GitHub Actions.
 ## Live Environments
 | Environment | URL |
 |---|---|
-| Production | https://ecommerce-production.onrender.com |
-| Staging | https://ecommerce-staging.onrender.com |
-| Development | https://ecommerce-development.onrender.com |
-
-## Folder Structure
-project/
-├── .github/workflows/     # CI/CD pipelines
-│   ├── ci-development.yml
-│   ├── ci-staging.yml
-│   └── cd-production.yml
-├── Dockerfile             # Frontend containerization
-├── Jenkinsfile            # Jenkins pipeline
-├── README.md
-├── src/
-│   ├── frontend/          # Main dashboard
-│   ├── user-service/      # User management
-│   ├── product-service/   # Product catalog
-│   ├── order-service/     # Order processing
-│   └── notification-service/ # Notifications
-└── k8s/
-├── frontend-deployment.yaml
-├── user-deployment.yaml
-├── product-deployment.yaml
-├── order-deployment.yaml
-└── notification-deployment.yaml
+| Production | https://ecommerce-production-4l7l.onrender.com |
 
 ## CI/CD Pipeline
 - **Development:** Auto-deploys on push to `develop` branch
-- **Staging:** Auto-deploys on push to `staging` branch  
+- **Staging:** Auto-deploys on push to `staging` branch
 - **Production:** Auto-deploys on push to `main` branch (requires approval)
 
 ## Pipeline Stages
@@ -57,11 +33,6 @@ project/
 4. Docker Login
 5. Build & Push Docker Image
 6. Deploy to Render
-
-## Docker Images
-| Service | Image |
-|---|---|
-| Frontend | `ibrahim29087/frontend:latest` |
 
 ## Kubernetes Deployments
 Each service deployed with:
@@ -89,23 +60,3 @@ All secrets stored in GitHub Environment Secrets:
 - `DOCKER_USERNAME` / `DOCKER_PASSWORD`
 - `RENDER_API_KEY`
 - `RENDER_SERVICE_ID_PROD/STAGING/DEV`
-
-## Reflection
-This project provided hands-on experience with containerized microservices
-and Kubernetes orchestration. Implementing CI/CD pipelines taught us how
-enterprise-grade DevOps workflows operate. Key challenges included managing
-environment-specific secrets, configuring multi-branch deployments, and
-debugging Docker build failures in GitHub Actions.
-
-## Order Service Updates
-
-- Improved order tracking UI
-- Added support/help section
-- Enhanced recent order details
-- Added delivery information for users
-
-## Notification Service Updates
-
-- Improved notification UI layout
-- Added read/unread status indicators
-- Enhanced user notification experience
