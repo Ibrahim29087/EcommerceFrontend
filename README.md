@@ -1,4 +1,4 @@
-# Devops_Final
+#  EcommerceFrontend
 
 ## Project Overview
 A cloud-native e-commerce platform built with microservices architecture,
@@ -8,9 +8,9 @@ CI/CD pipelines using GitHub Actions.
 ## Team
 | Name | Roll Number | Role | Page |
 |------|-------------|------|------|
-| Muhammad Ibrahim Raza | FA23-BCS-121 | Team Lead | Home Page,Product Page |
-| Muhammad Ali Raza | FA23-BCS-101 | Team Member | Orders Page |
-| Muhammad Umar Nagra | FA23-BCS-137 | Team Member | Account Page |
+| Muhammad Ibrahim Raza | FA23-BCS-121 | Team Lead | Home Page , Account Page |
+| Muhammad Ali Raza | FA23-BCS-101 | Team Member | Product Page |
+| Muhammad Umar Nagra | FA23-BCS-137 | Team Member |  Order Page |
 
 ## Repository URLs
 - **GitHub Repo:** https://github.com/Ibrahim29087/Devops_Final
